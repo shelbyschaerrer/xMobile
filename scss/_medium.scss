@@ -1,0 +1,12 @@
+header {
+    padding: 2rem $gutter;
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+// create for loop  i=increment, w=width
+@for $i from 1 through 12 {
+    $w: calc($i / 12) * 100%;
+    .medium-#{$i} {flex-basis: $w;}
+}

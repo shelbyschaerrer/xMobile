@@ -1,0 +1,151 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    height: 100%;
+  }
+  
+  /*---- apply a natural box layout model to all elements -------*/
+  * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+body {
+    height: 100%;
+    font-family: $defaultFont;
+    font-weight: $normalWeight;
+    color: $fontColor;
+    background-color: #3F1F1C;
+}
+
+#headerWrapper {
+    background-color: #F1F0F0;
+    color: $secondaryColor;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 1rem $gutter;
+    gap: 8px;
+    h1 {
+        margin: 0;
+        padding-left: .75rem;
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: #3F1F1C;
+    }
+}
+
+nav {
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent;
+        border: none;
+        font-size: 1.5rem;
+        color: #333;
+        padding: .5rem 1rem;
+    }
+
+    ul {
+        background-color: #F1F0F0;
+        position: absolute;
+        right: 0;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        display: none;
+    }
+
+    ul.open {
+        display: block;
+    }
+
+    ul li {
+        border-bottom: #333 1px solid;
+    }
+
+    ul li.active a {
+        color: white;
+        background-color: #75212D;
+     }
+
+    ul li a {
+        display: block;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        text-align: right;
+        color: black;
+    }
+}
+
+main h1 {
+    color: white;
+}
+
+main h2 {
+    font-weight: 900;
+}
+
+// create for loop  i=increment, w=width
+@for $i from 1 through 12 {
+    $w: calc($i / 12) * 100%;
+    .small-#{$i} {flex-basis: $w;}
+}
+
+// styling rows and columns
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 0 8px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.column {
+    padding: 0 8px;
+    margin: 8px 0;
+}
+
+//column/card style classes
+
+.redHeader {
+    h2 {
+        color: #75212D;
+    }
+}
+
+.bkgColor {
+    background-color: #dfdfdf96;
+    border-radius: 10px;
+}
+
+main img {
+    width: 100%;
+}
+
+
+
+
+
+// begin the footer
+
+#footerWrapper {
+    background-color: #F1F0F0;
+}
+
+footer {
+    padding: .5rem $gutter;
+    p {
+        margin: 0;
+        text-align: center;
+    }
+}
+

@@ -1,0 +1,41 @@
+header, main, footer {
+    max-width: 60rem;
+    margin: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 10%;
+
+    button {
+        display: none;
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        position: static;
+        li {
+            flex: 1;
+            border: none;
+            color: black;
+        }
+    }
+    ul li a {
+        display: block;
+        padding: .75rem 1rem;
+        text-align: center;
+        color: black;
+        &:hover {
+            background-color: #75212e66;
+            color: black;
+        }
+    }
+}
+
+// create for loop  i=increment, w=width
+@for $i from 1 through 12 {
+    $w: calc($i / 12) * 100%;
+    .large-#{$i} {flex-basis: $w;}
+}
